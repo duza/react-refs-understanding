@@ -5,6 +5,7 @@ export default class MyComponent extends Component {
   
   constructor(props) {
     super(props);
+    this.inputField = React.createRef();
     this.state = {
       uppercase: false,
     };
@@ -15,10 +16,15 @@ export default class MyComponent extends Component {
     // Accessing the ref using this.refs.inputField
     // const value = this.refs.inputField.value;
     // Accessing the ref using this.inputField
-    const value = this.inputField.value;
+    // const value = this.inputField.value;
+    
+    // Accessing the ref using this.inputField.current
+    const value = this.inputField.current.value;
 
     // this.refs.inputField.value = isUpper
-    this.inputField.value = isUpper 
+    // this.inputField.value = isUpper 
+
+    this.inputField.current.value = isUpper 
       ? value.toLowerCase()
       : value.toUpperCase();
 
@@ -31,8 +37,12 @@ export default class MyComponent extends Component {
        {/* Creating a string ref named: inputField 
         <input className="input" type="text" ref="inputField" />
        */}
-       {/* Creating a callback ref and storing it in this.inputField */}
+       {/* Creating a callback ref and storing it in this.inputField
         <input className="input" type="text" ref={elem => this.inputField = elem} />
+       */}
+       
+       {/* Referencing the ref from  this.inputField */}
+         <input className="input" type="text" ref={this.inputField} />
 
         <button className="button" type="button" onClick={this.toggleInputCase}>
           Toggle Case
