@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MyComponent.css';
 
 export default class MyComponent extends Component {
   
@@ -23,11 +24,11 @@ export default class MyComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
        {/* Creating a string ref named: inputField */}
-        <input type="text" ref="inputField" />
+        <input className="input" type="text" ref="inputField" />
 
-        <button type="button" onClick={this.toggleInputCase}>
+        <button className="button" type="button" onClick={this.toggleInputCase}>
           Toggle Case
         </button>
       </div>
