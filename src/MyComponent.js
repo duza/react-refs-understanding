@@ -13,9 +13,12 @@ export default class MyComponent extends Component {
   toggleInputCase = () => {
     const isUpper = this.state.uppercase;
     // Accessing the ref using this.refs.inputField
-    const value = this.refs.inputField.value;
+    // const value = this.refs.inputField.value;
+    // Accessing the ref using this.inputField
+    const value = this.inputField.value;
 
-    this.refs.inputField.value = isUpper
+    // this.refs.inputField.value = isUpper
+    this.inputField.value = isUpper 
       ? value.toLowerCase()
       : value.toUpperCase();
 
@@ -25,8 +28,11 @@ export default class MyComponent extends Component {
   render() {
     return (
       <div className="container">
-       {/* Creating a string ref named: inputField */}
+       {/* Creating a string ref named: inputField 
         <input className="input" type="text" ref="inputField" />
+       */}
+       {/* Creating a callback ref and storing it in this.inputField */}
+        <input className="input" type="text" ref={elem => this.inputField = elem} />
 
         <button className="button" type="button" onClick={this.toggleInputCase}>
           Toggle Case
