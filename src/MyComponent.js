@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FormComponent from './FormComponent';
 import './MyComponent.css';
 
 export default class MyComponent extends Component {
@@ -44,9 +45,10 @@ export default class MyComponent extends Component {
        {/* Referencing the ref from  this.inputField */}
          <input className="input" type="text" ref={this.inputField} />
 
-        <button className="button" type="button" onClick={this.toggleInputCase}>
+        <button className="button button-green" type="button" onClick={this.toggleInputCase}>
           Toggle Case
         </button>
+        <FormComponent />
       </div>
     );
   }
