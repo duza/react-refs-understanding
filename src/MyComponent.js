@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FormComponent from './FormComponent';
+import ControlledFormInput from './ControlledFormInput';
+import UncontrolledFormInput from './UncontrolledFormInput';
 import './MyComponent.css';
 
 export default class MyComponent extends Component {
@@ -49,6 +51,8 @@ export default class MyComponent extends Component {
           Toggle Case
         </button>
         <FormComponent />
+        <ControlledFormInput />
+        <UncontrolledFormInput />
       </div>
     );
   }
